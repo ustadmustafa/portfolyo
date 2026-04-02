@@ -24,33 +24,26 @@ export function Projects() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project) => (
-            <article 
+            <a
               key={project.name}
-              className="group glass rounded-xl p-6 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1"
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group glass rounded-xl p-6 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 block"
             >
               <div className="flex items-start justify-between mb-4">
                 <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">
                   {project.name}
                 </h3>
                 <div className="flex items-center gap-2">
-                  <a 
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <span
+                    onClick={(e) => { e.preventDefault(); window.open(project.githubUrl, '_blank'); }}
                     className="text-muted-foreground hover:text-foreground transition-colors"
                     aria-label={`View ${project.name} on GitHub`}
                   >
                     <Github className="h-4 w-4" />
-                  </a>
-                  <a 
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                    aria-label={`View ${project.name} live demo`}
-                  >
-                    <ExternalLink className="h-4 w-4" />
-                  </a>
+                  </span>
+                  <ExternalLink className="h-4 w-4 text-muted-foreground" />
                 </div>
               </div>
               
@@ -68,7 +61,7 @@ export function Projects() {
                   </span>
                 ))}
               </div>
-            </article>
+            </a>
           ))}
         </div>
       </div>
