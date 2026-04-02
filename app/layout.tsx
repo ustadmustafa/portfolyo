@@ -7,7 +7,7 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Developer Portfolio | Backend Engineer',
+  title: 'Mustafa Albayrak | Backend Developer',
   description: 'Backend-focused software developer who enjoys building practical projects, improving step by step, and turning ideas into working products.',
   generator: 'v0.app',
   icons: {
